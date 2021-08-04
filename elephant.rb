@@ -7,9 +7,12 @@ class Elephant
     end
 
     def calcularRecibo()
-        @impuesto = 1.2
-        if(@estado == "UT")
+        @impuesto = 1
+        case @estado
+        when "UT"
             @impuesto = 1.0685
+        when "NV"
+            @impuesto = 1.08
         end
         
         @descuento = 1
