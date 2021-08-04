@@ -1,18 +1,27 @@
 class Elephant
 
-    def initialize()
+    def initialize(cant=0, precio=0, estado="XX")
+        @cant = cant.to_i
+        @precio = precio.to_i
+        @estado = estado
     end
 
-    def calcularRecibo(cant=0, precio=0, estado="XX")
-        if(estado == "XX")
-            @val = ((cant.to_i * precio.to_i) * 1.1 * 0.5).round(4)
-        else
-            @val = ((cant.to_i * precio.to_i) * 1.2 * 0.5).round(4)
+    def calcularRecibo()
+        @impuesto = 1.2
+        if(@estado == "XX")
+            @impuesto = 1.1
         end
+        
+        @descuento = 1
+        if(@precio <= 10)
+            @descuento = 0.95
+        end
+
+        @val = ((@cant * @precio) * @impuesto * @descuento).round(4)
         puts @val
 
     end
 end
 
-elephant= Elephant.new 
-elephant.calcularRecibo(ARGV[0], ARGV[1], ARGV[2])
+elephant= Elephant.new(ARGV[0], ARGV[1], ARGV[2])
+elephant.calcularRecibo()
