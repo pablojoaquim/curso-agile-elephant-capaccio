@@ -17,11 +17,13 @@ class Elephant
             @impuesto = 1.0625
         when "AL"
             @impuesto = 1.04
+        when "CA"
+            @impuesto = 1.0825
         end
         
         @descuento = 1
-        if(@precio <= 10)
-            @descuento = 0.95
+        if(@precio <= 1000)
+            @descuento = 0.97
         end
 
         @val = ((@cant * @precio) * @impuesto * @descuento).round(4)
