@@ -15,6 +15,8 @@ class Elephant
             @impuesto = 1.08
         when "TX"
             @impuesto = 1.0625
+        when "AL"
+            @impuesto = 1.04
         end
         
         @descuento = 1
