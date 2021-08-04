@@ -7,18 +7,18 @@ class Elephant
     end
 
     def calcularRecibo()
-        @impuesto = 1
+        @impuesto = 0.0
         case @estado
         when "UT"
-            @impuesto = 1.0685
+            @impuesto = 6.85
         when "NV"
-            @impuesto = 1.08
+            @impuesto = 8.0
         when "TX"
-            @impuesto = 1.0625
+            @impuesto = 6.25
         when "AL"
-            @impuesto = 1.04
+            @impuesto = 4.0
         when "CA"
-            @impuesto = 1.0825
+            @impuesto = 8.25
         end
         
         @descuento = 1
@@ -35,8 +35,9 @@ class Elephant
         end
 
         @operacionA = (@cant * @precio)
-        @val = (@operacionA * @impuesto * @descuento).round(4)
+        @val = (@operacionA * (1+@impuesto/100) * @descuento).round(4)
         puts "#{@cant} * $#{@precio} = $#{@operacionA}"
+        puts "#{@estado} (%#{@impuesto})"
         puts @val
 
     end
