@@ -42,7 +42,7 @@ class Elephant
         puts "#{@cant} * $#{@precio} = $#{@operacionA}"
         puts "#{@estado} (%#{@impuesto}) = $#{@operacionB - @operacionA}"
         puts "DTO(#{@descuento}%) = $#{(@operacionB - @operacionByDescuento).round(3)}"
-        puts @val
+        puts "Total = $#{@val}"
 
     end
 end
