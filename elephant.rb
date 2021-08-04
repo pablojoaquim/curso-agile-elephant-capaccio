@@ -26,6 +26,8 @@ class Elephant
             @descuento = 0.97
         elsif(@precio <= 5000) 
             @descuento = 0.95
+        elsif(@precio <= 7000) 
+            @descuento = 0.93            
         end
 
         @val = ((@cant * @precio) * @impuesto * @descuento).round(4)
