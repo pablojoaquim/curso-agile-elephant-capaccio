@@ -34,7 +34,9 @@ class Elephant
             @descuento = 0.85                
         end
 
-        @val = ((@cant * @precio) * @impuesto * @descuento).round(4)
+        @operacionA = (@cant * @precio)
+        @val = (@operacionA * @impuesto * @descuento).round(4)
+        puts "#{@cant} * $#{@precio} = $#{@operacionA}"
         puts @val
 
     end
