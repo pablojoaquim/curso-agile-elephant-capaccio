@@ -36,11 +36,12 @@ class Elephant
 
         @operacionA = (@cant * @precio)
         @operacionB = @operacionA * (1+@impuesto/100)
-        @operacionByDescuento = @operacionB * (100-@descuento)/100
+        @operacionByDescuento = (@operacionB * ((100-@descuento).to_f/100)).round(3)
 
         @val = (@operacionByDescuento).round(4)
         puts "#{@cant} * $#{@precio} = $#{@operacionA}"
         puts "#{@estado} (%#{@impuesto}) = $#{@operacionB - @operacionA}"
+        puts "DTO(#{@descuento}%) = $#{(@operacionB - @operacionByDescuento).round(3)}"
         puts @val
 
     end
