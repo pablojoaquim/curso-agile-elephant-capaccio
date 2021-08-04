@@ -21,23 +21,24 @@ class Elephant
             @impuesto = 8.25
         end
         
-        @descuento = 1
+        @descuento = 0
         if(@precio <= 1000)
-            @descuento = 0.97
+            @descuento = 3
         elsif(@precio <= 5000) 
-            @descuento = 0.95
+            @descuento = 5
         elsif(@precio <= 7000) 
-            @descuento = 0.93            
+            @descuento = 7           
         elsif(@precio <= 10000) 
-            @descuento = 0.90 
+            @descuento = 10 
         elsif(@precio <= 50000) 
-            @descuento = 0.85                
+            @descuento = 15                
         end
 
         @operacionA = (@cant * @precio)
-        @val = (@operacionA * (1+@impuesto/100) * @descuento).round(4)
+        @operacionB = @operacionA * (1+@impuesto/100) 
+        @val = (@operacionB * @descuento).round(4)
         puts "#{@cant} * $#{@precio} = $#{@operacionA}"
-        puts "#{@estado} (%#{@impuesto})"
+        puts "#{@estado} (%#{@impuesto}) = #{@operacionB}"
         puts @val
 
     end
