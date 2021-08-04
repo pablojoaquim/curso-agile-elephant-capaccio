@@ -35,10 +35,12 @@ class Elephant
         end
 
         @operacionA = (@cant * @precio)
-        @operacionB = @operacionA * (1+@impuesto/100) 
+        @operacionB = @operacionA * (1+@impuesto/100)
+        @operacionByDescuento = @operacionB * (100-@descuento)/100
+
         @val = (@operacionB * @descuento).round(4)
         puts "#{@cant} * $#{@precio} = $#{@operacionA}"
-        puts "#{@estado} (%#{@impuesto}) = #{@operacionB}"
+        puts "#{@estado} (%#{@impuesto}) = $#{@operacionB - @operacionA}"
         puts @val
 
     end
