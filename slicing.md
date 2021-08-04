@@ -13,7 +13,7 @@ $5,000  5%
 $7,000  7%  
 $10,000 10%  
 $50,000 15%  
-Los printouts no son necesarios. El MVP sólo requiere el cálculo del Total.  
+El MVP requiere el cálculo del Total.  
   
 # Slicing  
 1- Obtener los parámetros requeridos.   
@@ -76,60 +76,60 @@ Acc: Debe ejecutarse ">>ruby factura.rb 5 100 AL" y devolver 520
 Acc: Debe ejecutarse ">>ruby factura.rb 5 100 CA" y devolver 541.25  
 Acc: Debe ejecutarse ">>ruby factura.rb 5 100 YY" y devolver 500  
   
-13- Considerar que si la compra es mayor o igual a 1000 se aplique un descuento del 3%, en otros casos no se aplica descuento:  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 1000 YY" y devolver 970  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 5000 YY" y devolver 5000  
+13- Considerar que si la compra es menor a 1000 se aplique un descuento del 3%, en otros casos no se aplica descuento:  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 1000 YY" y devolver 1000  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 5000 YY" y devolver 4850 
   
-14- Considerar que si la compra es mayor a 1000 y menor o igual a 5000 aplicar un descuento del 5%  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 1000 YY" y devolver 970  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 5000 YY" y devolver 4750  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 7000 YY" y devolver 7000  
+14- Considerar que si la compra es mayor a 1000 y menor o igual a 5000 aplicar un descuento del 3%  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 1000 YY" y devolver 1000  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 5000 YY" y devolver 4850  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 7000 YY" y devolver 6650   
   
-15- Considerar que si la compra es mayor a 5000 y menor o igual a 7000 aplicar un descuento del 7%  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 1000 YY" y devolver 970  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 5000 YY" y devolver 4750  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 7000 YY" y devolver 6510  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 10000 YY" y devolver 10000  
+15- Considerar que si la compra es mayor a 5000 y menor o igual a 7000 aplicar un descuento del 5%  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 1000 YY" y devolver 1000  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 5000 YY" y devolver 4850  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 7000 YY" y devolver 6650  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 10000 YY" y devolver 9300 
   
-16- Considerar que si la compra es mayor a 7000 y menor o igual a 10000 aplicar un descuento del 10%  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 1000 YY" y devolver 970  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 5000 YY" y devolver 4750  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 7000 YY" y devolver 6510  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 10000 YY" y devolver 9000  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 50000 YY" y devolver 50000  
+16- Considerar que si la compra es mayor a 7000 y menor o igual a 10000 aplicar un descuento del 7%  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 1000 YY" y devolver 1000  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 5000 YY" y devolver 4850  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 7000 YY" y devolver 6650  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 10000 YY" y devolver 9300  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 50000 YY" y devolver 45000  
   
-17- Considerar que si la compra es mayor a 10000 y menor o igual a 50000 aplicar un descuento del 15%  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 1000 YY" y devolver 970  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 5000 YY" y devolver 4750  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 7000 YY" y devolver 6510  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 10000 YY" y devolver 9000  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 50000 YY" y devolver 42500  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 60000 YY" y devolver 60000  
-  
+17- Considerar que si la compra es mayor a 10000 y menor o igual a 50000 aplicar un descuento del 10%, y si es mayor a 50000 aplicar un descuento de 15%.
+Acc: Debe ejecutarse ">>ruby factura.rb 1 1000 YY" y devolver 1000  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 5000 YY" y devolver 4850  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 7000 YY" y devolver 6650  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 10000 YY" y devolver 9300  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 50000 YY" y devolver 45000  
+Acc: Debe ejecutarse ">>ruby factura.rb 1 60000 YY" y devolver 51000  
+
 18- Imprimir el cálculo del gasto de la forma: "1 * $1000 = $1000"  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 1000 YY" y devolver:  
-"5 * $1000 = $1000"  
-"970"  
+Acc: Debe ejecutarse ">>ruby factura.rb 5 1000 YY" y devolver:  
+"5 * $1000 = $5000"  
+"4850"  
   
 19- Imprimir el cálculo del impuesto aplicado de la forma: "YY(%0.0) = $0"  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 1000 YY" y devolver:  
-"5 * $1000 = $1000"  
+Acc: Debe ejecutarse ">>ruby factura.rb 5 1000 YY" y devolver:  
+"5 * $1000 = $5000"  
 "YY(%0.0) = $0"  
-"970"  
+"4850"  
   
 20- Imprimir el cálculo del descuento aplicado de la forma: "DTO(%3) = $30"  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 1000 YY" y devolver:  
-"5 * $1000 = $1000"  
+Acc: Debe ejecutarse ">>ruby factura.rb 5 1000 YY" y devolver:  
+"5 * $1000 = $5000"  
 "YY(%0.0) = $0"  
-"DTO(%3) = $30"  
-"970"  
+"DTO(%3) = $150"  
+"4850"  
 
 21- Imprimir el cálculo del total de la forma: "Total = $52"  
-Acc: Debe ejecutarse ">>ruby factura.rb 1 1000 YY" y devolver:  
-"5 * $1000 = $1000"  
+Acc: Debe ejecutarse ">>ruby factura.rb 5 1000 YY" y devolver:  
+"5 * $1000 = $5000"  
 "YY(%0.0) = $0"  
-"DTO(%3) = $30"  
-"Total = $970"  
+"DTO(%3) = $150"  
+"Total = $4850"  
 
 
 

@@ -22,25 +22,25 @@ class Elephant
         end
         
         @descuento = 0
-        if(@precio >= 1000)
+        @compra = (@cant * @precio)
+        if(@compra > 1000 && @compra <= 5000)
             @descuento = 3
-        elsif(@precio >= 5000) 
+        elsif(@compra > 5000 && @compra <= 7000)
             @descuento = 5
-        elsif(@precio >= 7000) 
+        elsif(@compra > 7000 && @compra <= 10000)
             @descuento = 7           
-        elsif(@precio >= 10000) 
+        elsif(@compra > 10000 && @compra <= 50000)
             @descuento = 10 
-        elsif(@precio >= 50000) 
+        elsif(@compra > 50000)
             @descuento = 15                
         end
 
-        @operacionA = (@cant * @precio)
-        @operacionB = @operacionA * (1+@impuesto/100)
+        @operacionB = @compra * (1+@impuesto/100)
         @operacionByDescuento = (@operacionB * ((100-@descuento).to_f/100)).round(3)
 
         @val = (@operacionByDescuento).round(4)
-        puts "#{@cant} * $#{@precio} = $#{@operacionA}"
-        puts "#{@estado} (%#{@impuesto}) = $#{@operacionB - @operacionA}"
+        puts "#{@cant} * $#{@precio} = $#{@compra}"
+        puts "#{@estado} (%#{@impuesto}) = $#{@operacionB - @compra}"
         puts "DTO(#{@descuento}%) = $#{(@operacionB - @operacionByDescuento).round(3)}"
         puts "Total = $#{@val}"
 
