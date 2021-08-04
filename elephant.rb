@@ -22,15 +22,15 @@ class Elephant
         end
         
         @descuento = 0
-        if(@precio <= 1000)
+        if(@precio >= 1000)
             @descuento = 3
-        elsif(@precio <= 5000) 
+        elsif(@precio >= 5000) 
             @descuento = 5
-        elsif(@precio <= 7000) 
+        elsif(@precio >= 7000) 
             @descuento = 7           
-        elsif(@precio <= 10000) 
+        elsif(@precio >= 10000) 
             @descuento = 10 
-        elsif(@precio <= 50000) 
+        elsif(@precio >= 50000) 
             @descuento = 15                
         end
 
