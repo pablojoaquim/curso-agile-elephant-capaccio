@@ -13,6 +13,8 @@ class Elephant
             @impuesto = 1.0685
         when "NV"
             @impuesto = 1.08
+        when "TX"
+            @impuesto = 1.0625
         end
         
         @descuento = 1
