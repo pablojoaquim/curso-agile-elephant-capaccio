@@ -4,7 +4,9 @@ class Elephant
     end
 
     def calcularRecibo(cant=0, precio=0, estado="XX")
-        puts 52
+        puts cant.to_i
+        @val = cant.to_i * 10 + 2
+        puts @val
 
     end
 end
